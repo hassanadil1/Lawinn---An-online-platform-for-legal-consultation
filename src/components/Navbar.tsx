@@ -25,12 +25,16 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
        
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem setActive={setActive} active={active} item="Forums">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="/pythonforum">Python Forum</HoveredLink>
+          </div>
+        </MenuItem>
+
+        <MenuItem setActive={setActive} active={active} item="Login / Signup">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/Login">Login</HoveredLink>
+            <HoveredLink href="/SignUp">Signup</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
