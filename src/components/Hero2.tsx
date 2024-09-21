@@ -32,7 +32,7 @@ export function TypewriterEffectDemo() {
                         Login
                     </button>
                 </a>
-                <a href="/Signup">
+                <a href="/SignUp">
                     <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
                         Signup
                     </button>
