@@ -4,7 +4,7 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-function Navbar({ className }: { className?: string }) {
+function Navbar2({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
    
@@ -18,9 +18,20 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/">Back To Home</HoveredLink>
           </div>
       </MenuItem>
-       
 
         <MenuItem setActive={setActive} active={active} item="Get Started">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/Python">LawInn AI</HoveredLink>
+          </div>
+        </MenuItem>
+       
+        <MenuItem setActive={setActive} active={active} item="Forums">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/pythonforum">LawInn Forum</HoveredLink>
+          </div>
+        </MenuItem>
+
+        <MenuItem setActive={setActive} active={active} item="Login / Signup">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="Login">Login</HoveredLink>
             <HoveredLink href="/SignUp">Signup</HoveredLink>
@@ -32,4 +43,4 @@ function Navbar({ className }: { className?: string }) {
   )
 }
 
-export default Navbar
+export default Navbar2

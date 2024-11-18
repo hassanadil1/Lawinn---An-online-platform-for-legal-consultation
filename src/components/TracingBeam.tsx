@@ -5,9 +5,8 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "./ui/tracing-beam";
 
-
 const poppins = Poppins({
-  weight: ['600', '800'],
+  weight: ["600", "800"],
   subsets: ["latin"],
 });
 
@@ -20,18 +19,16 @@ export function TracingBeamDemo() {
             <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
               {item.badge}
             </h2>
-
             <p className={twMerge(poppins.className, "text-xl mb-4")}>
               {item.title}
             </p>
-
-            <div className="text-sm  prose prose-sm dark:prose-invert">
+            <div className="text-sm prose prose-sm dark:prose-invert">
               {item?.image && (
                 <Image
                   src={item.image}
-                  alt="blog thumbnail"
+                  alt="law-related image"
                   height="1000"
-                  width="1000"
+                  width="1500"
                   className="rounded-lg mb-10 object-cover"
                 />
               )}
@@ -46,51 +43,50 @@ export function TracingBeamDemo() {
 
 const dummyContent = [
   {
-    title: "Get Instant Python Help",
+    title: "Expand Your Client Reach",
     description: (
       <>
         <p>
-          Struggling with Python syntax or logic? Our AI assistant provides real-time solutions to your coding issues, helping you solve problems faster.
+          Showcase your expertise and attract clients by offering specialized
+          legal services on our platform. Expand your practice with ease.
         </p>
-        <p>
-          Save time by getting the right guidance without endlessly searching online for solutions.
-        </p>
+        <p>Join a thriving network of lawyers ready to connect with clients.</p>
       </>
     ),
-    badge: "AI Help",
-    image:"https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+    badge: "Client Network",
+    image: "https://images.pexels.com/photos/7841463/pexels-photo-7841463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    title: "Optimize Your Code",
+    title: "Engage with a Legal Community",
     description: (
       <>
         <p>
-          Write cleaner, more efficient code with AI-powered suggestions. Our assistant helps you refactor and improve code quality by offering optimizations and best practices.
+          Collaborate and exchange insights on our forum. Grow your expertise
+          through active discussions and support from a professional community.
         </p>
         <p>
-          Enhance your coding skills by learning how to simplify complex code and reduce bugs.
+          Stay updated with the latest legal trends and practices in your field.
         </p>
       </>
     ),
-    badge: "Code Optimization",
-    image:
-      "https://images.pexels.com/photos/2588757/pexels-photo-2588757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    badge: "Community Forum",
+    image: "https://images.pexels.com/photos/3184399/pexels-photo-3184399.jpeg",
   },
   {
-    title: "Boost Your Learning Curve",
+    title: "Leverage AI-Powered Legal Tools",
     description: (
       <>
         <p>
-          Accelerate your Python learning with intelligent, step-by-step guidance. Our assistant adapts to your skill level, helping you grow from beginner to pro.
+          Save time and enhance productivity with our AI legal assistant. Draft
+          documents, find precedents, and resolve queries in seconds.
         </p>
         <p>
-          Discover new libraries, frameworks, and tools, and enhance your knowledge with expert recommendations.
+          Unlock tools designed to simplify your workflow and improve client
+          outcomes.
         </p>
       </>
     ),
-    badge: "Learning Support",
-    image:
-      "https://images.pexels.com/photos/2781195/pexels-photo-2781195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    badge: "AI Assistance",
+    image: "https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
-
