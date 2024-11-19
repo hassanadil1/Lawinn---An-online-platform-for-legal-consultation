@@ -31,10 +31,9 @@ function Navbar2({ className }: { className?: string }) {
           </div>
         </MenuItem>
 
-        <MenuItem setActive={setActive} active={active} item="Login / Signup">
+        <MenuItem setActive={setActive} active={active} item="Exit">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="Login">Login</HoveredLink>
-            <HoveredLink href="/SignUp">Signup</HoveredLink>
+            <HoveredLink href="Login">Logout</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
