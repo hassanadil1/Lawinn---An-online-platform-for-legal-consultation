@@ -19,7 +19,7 @@ function Navbar2({ className }: { className?: string }) {
           </div>
       </MenuItem>
 
-        <MenuItem setActive={setActive} active={active} item="Get Started">
+        <MenuItem setActive={setActive} active={active} item="Ask LawInn">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/Python">LawInn AI</HoveredLink>
           </div>
