@@ -31,3 +31,7 @@ body {
 .font-calsans {
   font-family: 'CalSans', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}

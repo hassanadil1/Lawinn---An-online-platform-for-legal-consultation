@@ -30,7 +30,7 @@ export function Footer_Boxes() {
 
       {/* Footer Bottom */}
       <div className="absolute bottom-2 text-center text-neutral-500 text-xs w-full z-20">
-        © 2024 Your Company. All rights reserved.
+        © 2024 LawInn. All rights reserved.
       </div>
     </footer>
   );
