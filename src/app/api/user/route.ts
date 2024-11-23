@@ -19,6 +19,12 @@ export async function POST(req: Request) {
       .where(eq(usersTable.email, user.email))
       .limit(1);
 
+    if (existingUser.length > 0) {
+      return NextResponse.json(
+        { error: "A lawyer with this email already exists." },
+        { status: 400 }
+      );}
+      
     // If the user doesn't exist, insert the new user into the database
     if (existingUser.length === 0) {
       const result = await db
