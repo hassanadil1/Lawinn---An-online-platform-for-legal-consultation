@@ -42,10 +42,6 @@ export function Lawyerdeets()
           <Input id="password" placeholder="Do numberi" type="password" />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="designation">Prominent Works</Label>
-          <Input id="password" placeholder="blackmailllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll" type="password" />
-        </LabelInputContainer>
         
         
         <button
