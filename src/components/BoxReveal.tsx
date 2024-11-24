@@ -38,9 +38,9 @@ export async function BoxRevealDemo({ lawyer }: { lawyer: Lawyer }) {
           <p>
             <strong>Experience:</strong> {lawyer.experience_years} years of experience <br />
             {lawyer.highlights.map((highlight, idx) => (
-              <p key={idx}>
-                -&gt; {highlight}
-              </p>
+              <span key={idx}>
+                <strong>Highlight {idx + 1}:</strong> {highlight} <br />
+              </span>
             ))}
           </p>
         </div>
