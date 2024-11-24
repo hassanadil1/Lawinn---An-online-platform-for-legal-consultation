@@ -1,4 +1,4 @@
-import { AuroraBackgroundDemo } from "@/components/Bg-Lights";
+
 import { BackgroundLinesDemo } from "@/components/Bg-lines";
 import { Footer_Boxes } from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -7,7 +7,7 @@ import { LoginForm } from "@/components/Login";
 import { SignUp } from "@/components/SignUp";
 
 import { TracingBeamDemo } from "@/components/TracingBeam";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+
 import { StickyScrollRevealDemo } from "@/components/ui/StickyScroll";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
