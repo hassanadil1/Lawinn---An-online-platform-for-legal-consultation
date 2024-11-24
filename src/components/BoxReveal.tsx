@@ -1,37 +1,62 @@
-
+import React, { useEffect, useState } from "react";
 import BoxReveal from "@/components/ui/box-reveal";
 
-export async function BoxRevealDemo() {
+interface Lawyer {
+  id: number;
+  first_name: string;
+  last_name: string;
+  expertise: string;
+  experience_years: number;
+  pricing: string;
+  phone_number: string;
+  email: string;
+  highlights: string[];
+}
+
+export async function BoxRevealDemo({ lawyer }: { lawyer: Lawyer }) {
   return (
     <div className="size-full max-w-lg items-center justify-center overflow-hidden pt-8">
+      {/* Lawyer's Name */}
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
         <p className="text-[3.5rem] font-semibold">
-          Arsal Manan<span className="text-[#5046e6]">.</span>
+          {lawyer.first_name} {lawyer.last_name}
+          <span className="text-[#5046e6]">.</span>
         </p>
       </BoxReveal>
 
+      {/* Lawyer's Expertise */}
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
         <h2 className="mt-[.5rem] text-[1rem]">
-          Lawyer With Expertise in : {" "}
-          <span className="text-[#5046e6]"> Criminal Law</span>
+          Lawyer With Expertise in :{" "}
+          <span className="text-[#5046e6]">{lawyer.expertise}</span>
         </h2>
       </BoxReveal>
 
+      {/* Lawyer's Highlights */}
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
         <div className="mt-6">
           <p>
-            -&gt; 20+ free and open-source animated components built with
-            <span className="font-semibold text-[#5046e6]"> React</span>,
-            <span className="font-semibold text-[#5046e6]"> Typescript</span>,
-            <span className="font-semibold text-[#5046e6]"> Tailwind CSS</span>,
-            and
-            <span className="font-semibold text-[#5046e6]"> Framer Motion</span>
-            . <br />
-            -&gt; 100% open-source, and customizable. <br />
+            <strong>Experience:</strong> {lawyer.experience_years} years of experience <br />
+            {lawyer.highlights.map((highlight, idx) => (
+              <p key={idx}>
+                -&gt; {highlight}
+              </p>
+            ))}
           </p>
         </div>
       </BoxReveal>
 
+      {/* Contact Information */}
+      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+        <div className="mt-6">
+          <p>
+            <strong>Contact:</strong> {lawyer.phone_number} <br />
+            <strong>Email:</strong> {lawyer.email} <br />
+            <strong>Pricing:</strong> {lawyer.pricing} per hour
+          </p>
+        </div>
+      </BoxReveal>
     </div>
   );
 }
+
