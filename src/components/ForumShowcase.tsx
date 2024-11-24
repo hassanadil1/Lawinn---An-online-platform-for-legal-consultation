@@ -5,40 +5,41 @@ const reviews = [
   {
     name: "Jack",
     username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    body: "LawInn has completely transformed how I approach legal research. The forums are a treasure trove of knowledge!",
     img: "https://avatar.vercel.sh/jack",
   },
   {
     name: "Jill",
     username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    body: "The advice I received on LawInn forums helped me win my first pro bono case. Forever grateful to this community!",
     img: "https://avatar.vercel.sh/jill",
   },
   {
     name: "John",
     username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "LawInn connects lawyers, students, and enthusiasts like no other platform. It's a must-have for any legal professional.",
     img: "https://avatar.vercel.sh/john",
   },
   {
     name: "Jane",
     username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "As a law student, I've found invaluable answers to case studies and legal procedures on LawInn.",
     img: "https://avatar.vercel.sh/jane",
   },
   {
     name: "Jenny",
     username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "This platform has been instrumental in staying up-to-date with changes in the law and courtroom strategies.",
     img: "https://avatar.vercel.sh/jenny",
   },
   {
     name: "James",
     username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "I resolved a complex legal dispute thanks to advice shared by experts on LawInn. The best legal community out there!",
     img: "https://avatar.vercel.sh/james",
   },
 ];
+
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);

@@ -25,7 +25,7 @@ function Navbar2({
 
         <MenuItem setActive={setActive} active={active} item="Forums">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/pythonforum">LawInn Forum</HoveredLink>
+            <HoveredLink href="/Forum">LawInn Forum</HoveredLink>
           </div>
         </MenuItem>
 
@@ -38,7 +38,7 @@ function Navbar2({
         {/* Username Profile Menu Item */}
         <MenuItem setActive={setActive} active={active} item={username}>
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/profile">View Profile</HoveredLink>
+            <HoveredLink href="/UserProfile">View Profile</HoveredLink>
             <HoveredLink href="/settings">Settings</HoveredLink>
           </div>
         </MenuItem>
