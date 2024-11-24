@@ -8,7 +8,6 @@ export default function About() {
             <div className="mt-56">
                 <InputField />
             </div>
-            <TextGenerateEffectDemo />
 
 
             <Footer_Boxes />
