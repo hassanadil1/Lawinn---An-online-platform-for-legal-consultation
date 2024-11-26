@@ -51,10 +51,6 @@ useEffect(() => {
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/UserProfile">View Profile</HoveredLink>
             <HoveredLink href="/settings">Settings</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Exit">
-          <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/Login">Logout</HoveredLink>
           </div>
         </MenuItem>
