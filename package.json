@@ -17,9 +17,13 @@
     "@tabler/icons-react": "^3.17.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cookie": "^1.0.2",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.36.4",
     "framer-motion": "^11.11.17",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.460.0",
     "next": "14.2.8",
     "openai": "^4.73.0",
@@ -31,6 +35,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^20",
     "@types/pg": "^8.11.10",
     "@types/react": "^18",

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"; // Import useRouter
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
+import Cookies from "js-cookie";
 
 export function LoginForm() {
   const router = useRouter(); // Initialize the router for navigation
@@ -37,6 +38,8 @@ export function LoginForm() {
 
       if (response.ok) {
         // Navigate to ClientView on successful login
+        localStorage.setItem("token", result.token);
+        console.log(localStorage.getItem("token")); // Check if token is saved correctly
         router.push("/ClientView");
       } else {
         // Display error message from server response
