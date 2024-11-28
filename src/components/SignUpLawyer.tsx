@@ -39,6 +39,7 @@ export function SignupLawyer() {
       !lawyer.last_name ||
       !lawyer.email ||
       !lawyer.expertise ||
+      !lawyer.phone_number||
       !lawyer.experience_years ||
       !lawyer.pricing ||
       !lawyer.password
