@@ -1,48 +1,52 @@
 "use client";
-import React from "react";
-import { StickyScroll } from "./ui/sticky-scroll-reveal";
-import Image from "next/image";
 
-const content = [
-    {
-      title: "What are the legal implications of breaking a contract?",
-      description: "Learn about the potential legal actions and consequences.",
-      answers: ["Breaking a contract can lead to damages being awarded."],
-    },
-    {
-      title: "How to file a trademark?",
-      description:
-        "Understand the steps and processes involved in filing for a trademark.",
-      answers: ["You need to apply through your country's intellectual property office.", "You need to pay a fee."],
-      
-    },
-    {
-        title: "How to file a trademark?",
-        description:
-          "Understand the steps and processes involved in filing for a trademark.",
-        answers: ["You need to apply through your country's intellectual property office.", "You need to pay a fee."],
-        
-      },
-      {
-        title: "How to file a trademark?",
-        description:
-          "Understand the steps and processes involved in filing for a trademark.",
-        answers: ["You need to apply through your country's intellectual property office.", "You need to pay a fee."],
-        
-      },
-      {
-        title: "How to file a trademark?",
-        description:
-          "Understand the steps and processes involved in filing for a trademark.",
-        answers: ["You need to apply through your country's intellectual property office.", "You need to pay a fee."],
-        
-      },
-  ];
-  
+import React, { useEffect, useState } from "react";
+import { StickyScroll } from "./ui/sticky-scroll-reveal";
+
+interface Answer {
+  id: number;
+  text: string;
+  lawyer_name: string;
+}
+
+interface Question {
+  id: number;
+  text: string;
+  user_name: string;
+  answers: Answer[];
+}
+
 export function ForumQuestions() {
+  
+  const [questions, setQuestions] = useState<Question[]>([]);
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        const response = await fetch("/api/Forum/getquestions");
+        const data = await response.json();
+        setQuestions(data.questions); // Now TypeScript knows the structure
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+      }
+    };
+
+    fetchQuestions();
+  }, []);
+
   return (
     <div className="p-10">
-      <StickyScroll content={content} />
+      {questions.length > 0 ? (
+        <StickyScroll
+          content={questions.map((q) => ({
+            title: q.text,
+            description: `Asked by: ${q.user_name}`,
+            answers: q.answers.map((a) => `${a.lawyer_name}: ${a.text}`),
+          }))}
+        />
+      ) : (
+        <p>No questions available. Be the first to ask!</p>
+      )}
     </div>
   );
 }
