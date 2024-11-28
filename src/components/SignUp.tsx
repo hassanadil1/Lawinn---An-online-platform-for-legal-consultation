@@ -55,9 +55,10 @@ export function SignUp() {
 
       if (response.ok) {
         // Success, show the success message
-        router.push("/Login");
+        setSuccessMessage("Account Created Successfully");
+        router.push("/ClientView");
       } else {
-        setError(result.message || "Something went wrong");
+        setError(result.message || "Email Already Registered! ");
       }
     } catch (err) {
       setError("Error connecting to the server");
