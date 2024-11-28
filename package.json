@@ -11,36 +11,29 @@
   "dependencies": {
     "@clerk/nextjs": "^6.5.0",
     "@heroicons/react": "^2.2.0",
-    "@neondatabase/serverless": "^0.10.3",
+    "@neondatabase/serverless": "^0.10.4",
     "@next/font": "^14.2.8",
     "@radix-ui/react-label": "^2.1.0",
     "@tabler/icons-react": "^3.17.0",
+    "axios": "^1.7.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-<<<<<<< HEAD
-    "framer-motion": "^11.5.6",
-    "next": "^14.2.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.2"
-=======
     "cookie": "^1.0.2",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.36.4",
-    "framer-motion": "^11.11.17",
+    "framer-motion": "^11.5.6",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.460.0",
     "next": "14.2.8",
-    "openai": "^4.73.0",
+    "openai": "^4.73.1",
     "pg": "^8.13.1",
     "react": "^18",
     "react-dom": "^18",
     "react-tweet": "^3.2.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
->>>>>>> 345ae84700b7432ca9d203b9e44182ddf2fec509
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
