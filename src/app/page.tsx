@@ -32,6 +32,8 @@ export default function Home() {
         <ForumShowcase />
       </div>
       <Footer_Boxes />
+
+      
     </main>
 
   );
