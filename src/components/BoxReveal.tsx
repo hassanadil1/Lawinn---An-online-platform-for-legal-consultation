@@ -112,21 +112,6 @@ export default function BoxRevealDemo() {
         </div>
       </BoxReveal>
 
-      {/* Role */}
-      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-        <h2 className="mt-[.5rem] text-[1rem] flex items-center gap-2">
-          Role: <span className="text-[#5046e6]">{user.role}</span>
-          <button
-            className="text-sm bg-[#5046e6] text-white px-2 py-1 rounded"
-            onClick={() =>
-              handleEdit("role", prompt("Edit Role", user.role) || user.role)
-            }
-          >
-            Edit
-          </button>
-        </h2>
-      </BoxReveal>
-
       {user.expertise !== null && (
         <>
           {user.expertise && (
