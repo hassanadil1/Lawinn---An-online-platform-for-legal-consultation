@@ -92,6 +92,13 @@ export function LoginForm() {
           Login &rarr;
           <BottomGradient />
         </button>
+
+        <a href="/SignUp">
+          SignUp Instead &rarr;
+          <BottomGradient />
+        </a>
+        
+      
       </form>
     </div>
   );
