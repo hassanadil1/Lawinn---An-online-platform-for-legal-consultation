@@ -3,7 +3,7 @@ import { BackgroundLinesDemo } from "@/components/Bg-lines";
 import { Footer_Boxes } from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { TypewriterEffectDemo } from "@/components/Hero2";
-import { SignUp } from "@/components/SignUp";
+import { SignUp } from "@/components/sigin";
 
 import { TracingBeamDemo } from "@/components/TracingBeam";
 
