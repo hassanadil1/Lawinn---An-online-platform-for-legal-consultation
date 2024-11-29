@@ -12,58 +12,58 @@ import {
 
 // Add state to handle form inputs and API response
 export function SignUp() {
-  const [user, setUser] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-  });
+  // const [user, setUser] = useState({
+  //   first_name: "",
+  //   last_name: "",
+  //   email: "",
+  //   password: "",
+  // });
 
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const router = useRouter(); // Initialize the router
+  // const [error, setError] = useState("");
+  // const [successMessage, setSuccessMessage] = useState("");
+  // const router = useRouter(); // Initialize the router
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setUser((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setUser((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    if (!user.first_name || !user.last_name || !user.email || !user.password) {
-      setError("All fields are required");
-      return;
-    }
+  //   if (!user.first_name || !user.last_name || !user.email || !user.password) {
+  //     setError("All fields are required");
+  //     return;
+  //   }
 
-    setError(""); // Clear any previous errors
-    setSuccessMessage(""); // Clear success message
+  //   setError(""); // Clear any previous errors
+  //   setSuccessMessage(""); // Clear success message
 
-    try {
-      const response = await fetch("/api/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user }),
-      });
+  //   try {
+  //     const response = await fetch("/api/user", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ user }),
+  //     });
 
-      const result = await response.json();
+  //     const result = await response.json();
 
-      if (response.ok) {
-        // Success, show the success message
-        setSuccessMessage("Account Created Successfully");
-        router.push("/ClientView");
-      } else {
-        setError(result.message || "Email Already Registered! ");
-      }
-    } catch (err) {
-      setError("Error connecting to the server");
-    }
-  };
+  //     if (response.ok) {
+  //       // Success, show the success message
+  //       setSuccessMessage("Account Created Successfully");
+  //       router.push("/ClientView");
+  //     } else {
+  //       setError(result.message || "Email Already Registered! ");
+  //     }
+  //   } catch (err) {
+  //     setError("Error connecting to the server");
+  //   }
+  // };
 
   return (
     <div className="mt-32 max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
@@ -74,7 +74,7 @@ export function SignUp() {
         Sign Up as a Law Consultant or a Client.
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
+      {/* <form className="my-8" onSubmit={handleSubmit}> */}
 
         <button
           className="mb-3 bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
@@ -91,7 +91,7 @@ export function SignUp() {
           type="submit"
         >
           <a href="/SignupUser">
-            Sign up as a User &rarr;
+            Sign up as a Client &rarr;
           </a>
           <BottomGradient />
         </button>
@@ -102,7 +102,7 @@ export function SignUp() {
         </a>
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-      </form>
+      {/* </form> */}
     </div>
   );
 }

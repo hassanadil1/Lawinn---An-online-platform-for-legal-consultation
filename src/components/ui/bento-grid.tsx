@@ -22,7 +22,7 @@ export const BentoGrid = ({
 export const BentoGridItem = ({
   className,
   title,
-  description,
+  expertise,
   experience, // New prop for experience
   contact, // New prop for contact
   header,
@@ -31,7 +31,7 @@ export const BentoGridItem = ({
 }: {
   className?: string;
   title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
+  expertise?: string | React.ReactNode;
   experience?: string | React.ReactNode; // New prop for experience
   contact?: string | React.ReactNode; // New prop for contact
   header?: React.ReactNode;
@@ -60,7 +60,7 @@ export const BentoGridItem = ({
             {title}
           </div>
           <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-            {description}
+          <strong>Expertise: </strong>{expertise}
           </div>
           {experience && (
             <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300 mt-2">
