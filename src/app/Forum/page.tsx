@@ -2,10 +2,9 @@ import { Footer_Boxes } from "@/components/Footer";
 import { ForumInput } from "@/components/ForumInput";
 import { ForumQuestions } from "@/components/ForumScrolling";
 
-export default function About() {
+export default function ForumPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Main Content */}
       <div className="flex-grow">
         <div className="mt-56 mb-10">
           <ForumInput />
@@ -18,13 +17,8 @@ export default function About() {
             Publish your question, and the LawInn community will get back to you.
           </p>
         </div>
-
-        {/* Forum Showcase Component */}
-          <ForumQuestions />
-
+        <ForumQuestions />
       </div>
-
-      {/* Footer */}
       <footer className="mt-auto space-y-8">
         <Footer_Boxes />
       </footer>

@@ -17,15 +17,18 @@ interface Question {
 }
 
 export function ForumQuestions() {
-  
   const [questions, setQuestions] = useState<Question[]>([]);
 
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
         const response = await fetch("/api/Forum/getquestions");
-        const data = await response.json();
-        setQuestions(data.questions); // Now TypeScript knows the structure
+        if (response.ok) {
+          const data = await response.json();
+          setQuestions(data.questions || []);
+        } else {
+          throw new Error(response.statusText);
+        }
       } catch (error) {
         console.error("Error fetching questions:", error);
       }

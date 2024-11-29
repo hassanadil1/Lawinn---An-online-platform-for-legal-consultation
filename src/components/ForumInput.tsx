@@ -14,38 +14,37 @@ export function ForumInput() {
   ];
 
   const [question, setQuestion] = useState("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuestion(e.target.value);
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setQuestion(e.target.value);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const token = localStorage.getItem("authToken"); // Replace with your authentication token logic
 
+    const token = localStorage.getItem("token"); // Adjust auth logic as necessary.
     if (!token) {
       alert("Please log in to submit a question.");
       return;
     }
 
     try {
-      const response = await fetch("/api/Forum/Question", {
+      const response = await fetch("/api/Forum/question", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`, // Corrected here
         },
         body: JSON.stringify({ text: question }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Question submitted successfully:", data);
+        alert("Question submitted successfully!");
+        setQuestion(""); 
       } else {
-        console.error("Error submitting question:", response.statusText);
+        throw new Error(response.statusText);
       }
     } catch (error) {
       console.error("Error submitting question:", error);
+      alert("Failed to submit the question. Please try again.");
     }
   };
 
