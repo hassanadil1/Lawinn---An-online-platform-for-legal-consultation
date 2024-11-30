@@ -9,10 +9,11 @@ export const StickyScroll = ({
   contentClassName,
 }: {
   content: {
+    id: number; // Added to track question IDs for API calls
     title: string;
     description: string;
-    category?: string; // New field for category filtering
-    tags?: string[]; // New field for tag filtering
+    category?: string;
+    tags?: string[];
     answers?: string[];
     content?: React.ReactNode | any;
   }[];
@@ -21,6 +22,7 @@ export const StickyScroll = ({
   const [activeCard, setActiveCard] = React.useState(0);
   const [filteredContent, setFilteredContent] = useState(content);
   const [filters, setFilters] = useState<{ category: string; tags: string[] }>({ category: "", tags: [] });
+  const [answers, setAnswers] = useState<string[]>([]); // Tracks input answers per question
 
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
@@ -87,6 +89,56 @@ export const StickyScroll = ({
     });
   };
 
+  // Answer handling logic
+  const handleAnswerChange = (index: number, value: string) => {
+    setAnswers((prev) => {
+      const updated = [...prev];
+      updated[index] = value;
+      return updated;
+    });
+  };
+
+  const onAnswerSubmit = async (index: number) => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please log in to submit an answer.");
+      return;
+    }
+
+    const answer = answers[index];
+    if (!answer) {
+      alert("Answer cannot be empty.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/Forum/answer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ text: answer, question_id: content[index]?.id }),
+      });
+
+      if (response.ok) {
+        alert("Answer posted successfully!");
+        const data = await response.json();
+        console.log("Posted answer:", data);
+        setAnswers((prev) => {
+          const updated = [...prev];
+          updated[index] = ""; // Clear input for this answer
+          return updated;
+        });
+      } else {
+        throw new Error(response.statusText);
+      }
+    } catch (error) {
+      console.error("Error posting answer:", error);
+      alert("Failed to post the answer. Please try again.");
+    }
+  };
+
   return (
     <motion.div
       animate={{
@@ -138,10 +190,13 @@ export const StickyScroll = ({
                   type="text"
                   id={`answer-${index}`}
                   placeholder="Type your answer here..."
+                  value={answers[index] || ""} // Track answer input per question
+                  onChange={(e) => handleAnswerChange(index, e.target.value)}
                   className="mt-2 w-full px-4 py-2 rounded-md bg-slate-800 text-slate-100 border border-slate-600 focus:outline-none focus:ring focus:ring-cyan-500"
                 />
                 <button
                   type="button"
+                  onClick={() => onAnswerSubmit(index)} // Call answer submission logic
                   className="mt-2 w-full px-4 py-2 bg-cyan-600 text-white rounded-md hover:bg-cyan-700 focus:outline-none focus:ring focus:ring-cyan-500"
                 >
                   Publish Answer
@@ -208,11 +263,11 @@ export const StickyScroll = ({
               <div key={tag} className="flex items-center">
                 <input
                   type="checkbox"
-                  id={tag}
+                  id={`tag-${tag}`}
                   onChange={(e) => handleTagChange(e, tag)}
                   className="mr-2"
                 />
-                <label htmlFor={tag} className="text-slate-200">
+                <label htmlFor={`tag-${tag}`} className="text-slate-300">
                   {tag}
                 </label>
               </div>

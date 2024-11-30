@@ -42,6 +42,7 @@ export function ForumQuestions() {
       {questions.length > 0 ? (
         <StickyScroll
           content={questions.map((q) => ({
+            id: q.id, 
             title: q.text,
             description: `Asked by: ${q.user_name}`,
             answers: q.answers.map((a) => `${a.lawyer_name}: ${a.text}`),

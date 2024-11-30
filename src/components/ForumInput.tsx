@@ -19,7 +19,7 @@ export function ForumInput() {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const token = localStorage.getItem("token"); // Adjust auth logic as necessary.
+    const token = localStorage.getItem("token");
     if (!token) {
       alert("Please log in to submit a question.");
       return;
