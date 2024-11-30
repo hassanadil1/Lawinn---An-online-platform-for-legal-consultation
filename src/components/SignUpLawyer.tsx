@@ -64,7 +64,7 @@ export function SignupLawyer() {
 
       if (response.ok) {
         setSuccessMessage("Lawyer registered successfully!");
-        setTimeout(() => router.push("/Login")); // Redirect to login after 2 seconds
+        setTimeout(() => router.push("/ClientView")); // Redirect to login after 2 seconds
       } else {
         setError(result.message || "Something went wrong.");
       }

@@ -45,9 +45,9 @@ export function LawyerGrid() {
         <BentoGridItem
           key={lawyer.id}
           title={`${lawyer.first_name} ${lawyer.last_name}`}
-          description={`Expertise: ${lawyer.expertise}`}
-          experience={`Experience: ${lawyer.experience_years} years`}
-          contact={`Contact: ${lawyer.phone_number}`}
+          expertise={`${lawyer.expertise}`}
+          experience={`${lawyer.experience_years} years`}
+          contact={`${lawyer.phone_number}`}
           header={
             <div className="flex flex-col items-center justify-center h-48 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg p-6">
               <p className="text-white text-xl font-bold mt-2">${lawyer.pricing}/hour</p>
