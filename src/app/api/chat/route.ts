@@ -16,17 +16,20 @@ export async function POST(request: Request) {
     // Call OpenAI API to get the response for the user's input
     const chatCompletion = await openai.chat.completions.create({
       messages: [{ role: "user", content: userInput }],
-      model: "gpt-4-1106-preview", // Use GPT-3.5 for now if GPT-4 is not accessible
+      model: "gpt-3.5-turbo-0125",
     });
 
     const answer = chatCompletion.choices[0].message.content;
 
     return NextResponse.json({ answer });
   } catch (error) {
-    console.error("Error fetching OpenAI response:", error);
-    return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
-      { status: 500 }
-    );
-  }
+  console.error("Error fetching OpenAI response:", error);
+  const errorMessage =
+    error instanceof Error ? error.message : "Unknown error occurred.";
+  return NextResponse.json(
+    { error: `Something went wrong: ${errorMessage}` },
+    { status: 500 }
+  );
+}
+
 }

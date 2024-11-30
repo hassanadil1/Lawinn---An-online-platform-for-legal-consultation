@@ -7,7 +7,7 @@ export default function About() {
         <>
             <div className="mt-56 mb-23">
                 <InputField />
-                <TextGenerateEffectDemo words='hello brooooooo how are you fareed jackie, please complete this bot kindly leavee rafi for a while and complete this section at any cost by today. thank you!' />
+                
             </div>
             
 
