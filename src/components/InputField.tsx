@@ -10,6 +10,7 @@ export function InputField() {
 
   const placeholders = [
     "Is AI girlfriend Haram?",
+    "What is the penalty for ruining an event (SOFTEC)?",
     "Who is Tyler Durden?",
     "Is weed legal in Lahore?",
     "Can I blackmail in Nigeria?",
