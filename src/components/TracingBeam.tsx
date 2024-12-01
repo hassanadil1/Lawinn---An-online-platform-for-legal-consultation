@@ -54,7 +54,7 @@ const dummyContent = [
       </>
     ),
     badge: "Client Network",
-    image: "https://images.pexels.com/photos/7841463/pexels-photo-7841463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://images.pexels.com/photos/4427619/pexels-photo-4427619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     title: "Engage with a Legal Community",
@@ -70,7 +70,7 @@ const dummyContent = [
       </>
     ),
     badge: "Community Forum",
-    image: "https://images.pexels.com/photos/3184399/pexels-photo-3184399.jpeg",
+    image: "https://images.pexels.com/photos/4427431/pexels-photo-4427431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     title: "Leverage AI-Powered Legal Tools",
